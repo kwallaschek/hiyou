@@ -11,3 +11,9 @@ html,body {
         height: 100%;
         background: #00b9d8;
 }
+.list-group{
+        max-height: 80vh;
+        margin-bottom: 10px;
+        overflow:scroll;
+        -webkit-overflow-scrolling: touch;
+}

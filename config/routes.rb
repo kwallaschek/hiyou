@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :users
   resources :households
-  get '/new_expense_modal/:id', to: 'households#new_expense_modal', as: :new_expense_modal
+  resources :expenses
+  get '/new_expense_modal', to: 'households#new_expense_modal', as: :new_expense_modal
 
 end
