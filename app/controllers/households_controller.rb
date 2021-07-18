@@ -1,6 +1,6 @@
 class HouseholdsController < ApplicationController
   before_action :set_household, only: [:show, :destroy]
-  # before_action :reject_if_non_member, only: :show
+  before_action :reject_if_non_member, only: [:show, :destroy]
 
   def create
     @household = Household.new(name: params[:name])
@@ -29,14 +29,14 @@ class HouseholdsController < ApplicationController
   private
 
   def reject_if_non_member
-    member = HouseholdMember.where(household_id: @household.id, user_id: current_user.id)
-    redirect_to home unless member
+    member = HouseholdMember.where(household_id: @household.id, user_id: current_user.id).last
+    redirect_to root_path unless member
   end
 
   def set_household
     @household = Household.find(params[:id])
   rescue
     flash[:alert] = "Not found"
-    #redirect_to root_path
+    redirect_to root_path
   end
 end
