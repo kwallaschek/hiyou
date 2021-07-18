@@ -1,0 +1,37 @@
+<!-- Modal -->
+<div class="modal fade" id="newExpenseModal" tabindex="-1" aria-labelledby="expenseModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create a new Expense</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect01">Payer</label>
+          <select class="form-select" id="inputGroupSelect01">
+            <% @household.household_members.each do |household_member| %>
+              <% if household_member.user == current_user %>
+                <option selected value="<%= current_user.id %>"><%= current_user.name %></option>
+              <% else %>
+                <option value="<%= household_member.id.to_i %>"><%= household_member.user.name %></option>
+              <% end %>
+            <% end %>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Amount</span>
+          <input type="text" id="amount_field" class="form-control" placeholder="1000¥" aria-label="amount" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="modalClose" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="newExpenseSave" class="btn btn-primary">
+          <span id="newExpenseSaveLoader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden="true"></span>
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -20,6 +20,12 @@ class HouseholdsController < ApplicationController
 
   def new_expense_modal
     @expense = Expense.new
+    @expense.household = Household.find(current_user.main_household)
+    @expense.amount = params[:amount]
+    @expense.payer_id_1 = params[:mainPayer]
+    @expense.save!
+    render json: {status: 200}
+
   end
 
   def index
@@ -34,7 +40,7 @@ class HouseholdsController < ApplicationController
   end
 
   def set_household
-    @household = Household.find(params[:id])
+    @household = Household.find(1)
   rescue
     flash[:alert] = "Not found"
     redirect_to root_path
