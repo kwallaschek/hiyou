@@ -23,6 +23,8 @@ class HouseholdsController < ApplicationController
     @expense.household = Household.find(current_user.main_household)
     @expense.amount = params[:amount]
     @expense.payer_id_1 = params[:mainPayer]
+    @expense.date = params[:date]
+    @expense.name = params[:name]
     @expense.save!
     render json: {status: 200}
 

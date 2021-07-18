@@ -1,0 +1,20 @@
+<ul class="list-group">
+  <% @expenses.each do |expense| %>
+    <li class="list-group-item">
+      <div class="row">
+      <div class="col-2">
+        <%= expense.date.strftime("%Y/%m/%d") %>
+      </div>
+        <div class="col-5">
+          <%= expense.name %>
+        </div>
+      <div class="col-2">
+        <%= expense.amount%>¥
+      </div>
+      <div class="col-3">
+        <%= User.find(expense.payer_id_1).name %>
+      </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

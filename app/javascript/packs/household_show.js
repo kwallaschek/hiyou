@@ -1,4 +1,3 @@
-
 let newExpenseSave = document.getElementById('newExpenseSave')
 newExpenseSave.onclick = function () {
     $('#newExpenseSaveLoader').hidden = false
@@ -8,7 +7,7 @@ newExpenseSave.onclick = function () {
         url: '/new_expense_modal/',
         method: 'GET',
         dataType: 'json',
-        data: { "amount": $('#amount_field').val(), "mainPayer": $('#inputGroupSelect01').val() },
+        data: { "amount": $('#amount_field').val(), "mainPayer": $('#inputGroupSelect01').val(), "date": $('#expense_day').val(), "name": $('#name').val() },
         success: function (data){
             if (data["status"] === 200){
                 $('#modalClose').click();

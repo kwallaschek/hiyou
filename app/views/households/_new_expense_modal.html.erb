@@ -8,6 +8,10 @@
       </div>
       <div class="modal-body">
         <div class="input-group mb-3">
+          <span class="input-group-text">Name</span>
+          <input type="text" id="name" class="form-control" aria-label="name" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
           <label class="input-group-text" for="inputGroupSelect01">Payer</label>
           <select class="form-select" id="inputGroupSelect01">
             <% @household.household_members.each do |household_member| %>
@@ -20,8 +24,14 @@
           </select>
         </div>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">Amount</span>
+          <span class="input-group-text">Amount</span>
           <input type="text" id="amount_field" class="form-control" placeholder="1000¥" aria-label="amount" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Day</span>
+          <input type="date" id="expense_day"
+               value="<%= Date.today %>"
+               min="2018-01-01" max="2023-12-31">
         </div>
       </div>
       <div class="modal-footer">
@@ -34,4 +44,3 @@
     </div>
   </div>
 </div>
-

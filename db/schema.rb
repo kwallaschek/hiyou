@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_18_032256) do
+ActiveRecord::Schema.define(version: 2021_07_18_100815) do
 
   create_table "expenses", force: :cascade do |t|
     t.integer "amount"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2021_07_18_032256) do
     t.integer "amount_9"
     t.integer "payer_id_10"
     t.integer "amount_10"
+    t.datetime "date"
+    t.string "name"
     t.index ["household_id"], name: "index_expenses_on_household_id"
   end
 
