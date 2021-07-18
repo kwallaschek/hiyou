@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_17_001543) do
+ActiveRecord::Schema.define(version: 2021_07_17_121447) do
+
+  create_table "household_members", force: :cascade do |t|
+    t.decimal "household_id"
+    t.decimal "user_id"
+    t.boolean "admin"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "households", force: :cascade do |t|
+    t.string "name"
+    t.decimal "household_member_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
