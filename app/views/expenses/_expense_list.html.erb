@@ -1,6 +1,6 @@
 <ul class="list-group">
   <% @expenses.each do |expense| %>
-    <li class="list-group-item">
+    <li class="list-group-item" onclick="location.href='<%= expense_path(expense.id) %>';">
       <div class="row">
       <div class="col-2">
         <%= expense.date.strftime("%Y/%m/%d") %>
