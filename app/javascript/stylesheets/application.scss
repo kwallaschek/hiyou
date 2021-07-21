@@ -1,6 +1,8 @@
 :root {
         font-size: 16px;
-        --main-color: #00b9d8;
+        --main-color: #000000;
+        --secondary-color: #E3DADA;
+        --hightlight-color: #FF9300;
 }
 
 html,body {
@@ -22,7 +24,10 @@ body::-webkit-scrollbar {
 }
 
 .sidebar:hover{
-        width: 8rem;
+        width: 12rem;
+        .nav-link {
+                visibility: visible;
+        }
 }
 
 .top-bar {
@@ -32,6 +37,28 @@ body::-webkit-scrollbar {
         background: var(--main-color);
 }
 
+.side-bar-icon {
+
+}
+
+.nav-link {
+        display: inline-block;
+        visibility: hidden;
+}
+i.fas,i.fab {
+        color: var(--secondary-color);
+}
+
+i.fas:hover,i.fab:hover {
+        color: var(--hightlight-color);
+}
+.nav {
+        padding: 0.5rem;
+}
+
+.nav-item {
+        margin-top: 2rem;
+}
 .main-content {
         margin-left: 5rem;
         padding: 2rem;

@@ -1,16 +1,19 @@
 <div class="sidebar">
 <ul class="nav flex-column">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
+    <i class="fas fa-indent side-bar-icon fa-2x ml-1"></i>
+    <p class="nav-link">
+      <%= link_to 'Household', household_path(current_user.main_household) %>
+    </p>
   </li>
   <li class="nav-item">
-    <%= link_to 'Household', household_path(current_user.main_household) %>
+    <i class="fas fa-indent side-bar-icon fa-2x ml-1"></i>
+    <p class="nav-link">
+      <%= link_to 'Expenses', expenses_path %>
+    </p>
   </li>
   <li class="nav-item">
-    <%= link_to 'Expenses', expenses_path %>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+
   </li>
 </ul>
 </div>
