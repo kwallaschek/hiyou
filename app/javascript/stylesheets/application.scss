@@ -38,6 +38,7 @@ body::-webkit-scrollbar {
 }
 
 .side-bar-icon {
+        padding: 0.2rem;
 
 }
 
@@ -63,6 +64,56 @@ i.fas:hover,i.fab:hover {
         margin-left: 5rem;
         padding: 2rem;
 }
+
+
+
+@media (min-width: 90rem) {
+        .dashboard {
+                display: grid;
+                grid-template-columns: [first] 50% [line2] 50%[end];
+                grid-template-rows: 40vh 3vh 40vh 3vh;
+                justify-items: start;
+        }
+
+        .d-item1 {
+                grid-row-start: 1;
+                grid-column-start: 1;
+        }
+        .d-item2 {
+                grid-row-start: 1;
+                grid-column-start: 2;
+        }
+        .d-item3 {
+                grid-row-start: 3;
+                grid-column-start: 1;
+        }
+        .d-item4 {
+                grid-row-start: 3;
+                grid-column-start: 2;
+        }
+        @for $i from 1 through 4{
+                .d-item#{$i} {
+                        width: 90%;
+                        height: 90%;
+                        background: #730E15;
+                }
+        }
+}
+@media (max-width: 90rem) {
+        .dashboard {
+                height: 90vh;
+                overflow-y: scroll;
+        }
+        @for $i from 1 through 4{
+                .d-item#{$i} {
+                        aspect-ratio: 16/9;
+                        margin-bottom: 0.5rem;
+                        background: #730E15;
+                }
+        }
+}
+
+
 
 .list-group{
         max-height: 80vh;

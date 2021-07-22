@@ -4,7 +4,6 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: 'show'
   before_action :only_household_member, only: 'show'
 
-
   def index
 
   end
