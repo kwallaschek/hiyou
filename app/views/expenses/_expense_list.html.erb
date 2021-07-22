@@ -12,7 +12,7 @@
         ¥<%= expense.amount%>
       </div>
       <div class="col-3">
-        <%= User.find(expense.payer_id_1).name %>
+        <%= expense.user.name %>
       </div>
         <% if expense.category != nil %>
           <div id="category" class="col-2" data-a-sign="" data-a-dec="," data-a-sep=".">

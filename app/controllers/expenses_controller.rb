@@ -21,7 +21,7 @@ class ExpensesController < ApplicationController
   end
 
   def set_expenses
-    @expenses = Expense.where(household_id: current_user.main_household)
+    @expenses = Expense.eager_load(:user, :category).where(household_id: current_user.main_household)
   end
 
   def set_expense
