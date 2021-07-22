@@ -8,7 +8,12 @@ newExpenseSave.onclick = function () {
         url: '/new_expense_modal/',
         method: 'GET',
         dataType: 'json',
-        data: { "amount": AutoNumeric.getNumber('#amount_field'), "mainPayer": $('#inputGroupSelect01').val(), "date": $('#expense_day').val(), "name": $('#name').val() },
+        data: { "amount": AutoNumeric.getNumber('#amount_field'),
+                "mainPayer": $('#payerSelect').val(),
+                "date": $('#expense_day').val(),
+                "name": $('#name').val(),
+                "category": $('#categorySelect').val()
+        },
         success: function (data){
             if (data["status"] === 200){
                 $('#modalClose').click();

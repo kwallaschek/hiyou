@@ -12,8 +12,8 @@
           <input type="text" id="name" class="form-control" aria-label="name" aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupSelect01">Payer</label>
-          <select class="form-select" id="inputGroupSelect01">
+          <label class="input-group-text" for="payerSelect">Payer</label>
+          <select class="form-select" id="payerSelect">
             <% @household.household_members.each do |household_member| %>
               <% if household_member.user == current_user %>
                 <option selected value="<%= current_user.id %>"><%= current_user.name %></option>
@@ -32,6 +32,18 @@
           <input type="date" id="expense_day"
                value="<%= Date.today %>"
                min="2018-01-01" max="2023-12-31">
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="categorySelect">Category</label>
+          <select class="form-select" id="categorySelect">
+            <% Category.all.each do |cat| %>
+              <% if cat.id == 1 %>
+                <option selected value="<%= cat.id %>"><%= cat.name %></option>
+              <% else %>
+                <option value="<%= cat.id %>"><%= cat.name %></option>
+              <% end %>
+            <% end %>
+          </select>
         </div>
       </div>
       <div class="modal-footer">

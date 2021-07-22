@@ -5,7 +5,7 @@
       <div class="col-2">
         <%= expense.date.strftime("%Y/%m/%d") %>
       </div>
-        <div class="col-5">
+        <div class="col-2">
           <%= expense.name %>
         </div>
       <div id="amount" class="col-2" data-a-sign="" data-a-dec="," data-a-sep=".">
@@ -14,6 +14,11 @@
       <div class="col-3">
         <%= User.find(expense.payer_id_1).name %>
       </div>
+        <% if expense.category != nil %>
+          <div id="category" class="col-2" data-a-sign="" data-a-dec="," data-a-sep=".">
+            <%= expense.category.name %>
+          </div>
+        <% end %>
       </div>
     </li>
   <% end %>
