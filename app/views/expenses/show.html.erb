@@ -1,0 +1,14 @@
+<div>
+  <p>
+    <%= @expense.date %>
+  </p>
+  <p>
+    <%= @expense.name %>
+  </p>
+  <p>
+    ¥<%= @expense.amount %>
+  </p>
+  <p>
+    <%= User.find(@expense.payer_id_1).name %>
+  </p>
+</div>

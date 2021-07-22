@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{material, material.cyan-light_blue}" />
+    <file url="file://$PROJECT_DIR$" libraries="{@popperjs, @popperjs/core, autonumeric, bootstrap, bootstrap-datepicker, c1aca4cf3e, jquery, jquery-1.12.4, jquery-ui, jquery-validate, material, material.cyan-light_blue}" />
   </component>
 </project>

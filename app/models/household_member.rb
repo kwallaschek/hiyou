@@ -1,4 +1,6 @@
 class HouseholdMember < ApplicationRecord
+  belongs_to :user
+  belongs_to :household
   before_destroy :has_at_least_one_admin?, prepend: true
   before_update :has_at_least_one_admin?, prepend: true
 

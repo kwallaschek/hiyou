@@ -1,1 +1,10 @@
 <h1 class="text-center mt-4"><%= @household.name %></h1>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newExpenseModal">
+  New Expense
+</button>
+
+<%= render 'new_expense_modal' %>
+
+<%= javascript_pack_tag 'household_show'%>
