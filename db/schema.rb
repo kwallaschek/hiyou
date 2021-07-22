@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_18_100815) do
+ActiveRecord::Schema.define(version: 2021_07_22_092932) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "expenses", force: :cascade do |t|
     t.integer "amount"
@@ -37,6 +43,8 @@ ActiveRecord::Schema.define(version: 2021_07_18_100815) do
     t.integer "amount_10"
     t.datetime "date"
     t.string "name"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_expenses_on_category_id"
     t.index ["household_id"], name: "index_expenses_on_household_id"
   end
 

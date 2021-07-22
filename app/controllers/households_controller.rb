@@ -25,6 +25,7 @@ class HouseholdsController < ApplicationController
     @expense.payer_id_1 = params[:mainPayer]
     @expense.date = params[:date]
     @expense.name = params[:name]
+    @expense.category = Category.find(params[:category])
     @expense.save!
     render json: {status: 200}
 
