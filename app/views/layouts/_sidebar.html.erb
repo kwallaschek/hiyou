@@ -1,13 +1,19 @@
 <div class="sidebar">
 <ul class="nav flex-column">
   <li class="nav-item">
-    <i class="fas fa-indent side-bar-icon fa-2x ml-1"></i>
+    <i class="fas fa-tachometer-alt side-bar-icon fa-2x"></i>
+    <p class="nav-link">
+      <%= link_to 'Dashboard', dashboard_path(current_user.main_household) %>
+    </p>
+  </li>
+  <li class="nav-item">
+    <i class="fas fa-indent side-bar-icon fa-2x"></i>
     <p class="nav-link">
       <%= link_to 'Household', household_path(current_user.main_household) %>
     </p>
   </li>
   <li class="nav-item">
-    <i class="fas fa-indent side-bar-icon fa-2x ml-1"></i>
+    <i class="fas fa-indent side-bar-icon fa-2x"></i>
     <p class="nav-link">
       <%= link_to 'Expenses', expenses_path %>
     </p>
