@@ -94,19 +94,26 @@ i.fas:hover,i.fab:hover {
         @for $i from 1 through 4{
                 .d-item#{$i} {
                         width: 90%;
-                        height: 90%;
+                        aspect-ratio: 16/9;
+                        max-height: 40vh;
                         background: #730E15;
                 }
         }
 }
 @media (max-width: 90rem) {
         .dashboard {
+                display: grid;
+                grid-template-columns: 1% 98% 1%;
                 height: 90vh;
                 overflow-y: scroll;
+                justify-items: center;
         }
         @for $i from 1 through 4{
                 .d-item#{$i} {
                         aspect-ratio: 16/9;
+                        grid-column-start: 2;
+                        max-height: 40vh;
+                        width: 90%;
                         margin-bottom: 0.5rem;
                         background: #730E15;
                 }
