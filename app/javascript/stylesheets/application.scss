@@ -3,6 +3,7 @@
         --main-color: #000000;
         --secondary-color: #E3DADA;
         --hightlight-color: #FF9300;
+        --background-color: #D4D4D4;
 }
 
 html,body {
@@ -65,7 +66,9 @@ i.fas:hover,i.fab:hover {
         padding: 2rem;
 }
 
+.text {
 
+}
 
 @media (min-width: 90rem) {
         .dashboard {
@@ -94,9 +97,8 @@ i.fas:hover,i.fab:hover {
         @for $i from 1 through 4{
                 .d-item#{$i} {
                         width: 90%;
-                        aspect-ratio: 16/9;
                         max-height: 40vh;
-                        background: #730E15;
+                        background: var(--background-color);
                 }
         }
 }
@@ -110,12 +112,11 @@ i.fas:hover,i.fab:hover {
         }
         @for $i from 1 through 4{
                 .d-item#{$i} {
-                        aspect-ratio: 16/9;
                         grid-column-start: 2;
                         max-height: 40vh;
                         width: 90%;
                         margin-bottom: 0.5rem;
-                        background: #730E15;
+                        background: var(--background-color);
                 }
         }
 }

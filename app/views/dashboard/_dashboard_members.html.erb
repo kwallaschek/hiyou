@@ -1,0 +1,6 @@
+<div class="container">
+  <p class="text">Members</p>
+  <% Household.find(current_user.main_household).user.each do |user| %>
+    <li class="text-center"><%= user.name %></li>
+  <% end %>
+</div>

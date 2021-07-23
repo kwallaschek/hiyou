@@ -17,3 +17,4 @@ require("channels")
 //= require jquery
 //= require_tree .
 import "../stylesheets/application";
+import "chartkick/chart.js"

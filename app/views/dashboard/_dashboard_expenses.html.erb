@@ -1,0 +1,6 @@
+<div class="container">
+  <p class="text">Last Expenses</p>
+  <% Household.find(current_user.main_household).expenses.limit(5).each do |expense| %>
+    <p class="text-center"> ¥<%= expense.amount %> <%= expense.name %></p>
+  <% end %>
+</div>
